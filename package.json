@@ -1,0 +1,28 @@
+{
+  "name": "red-contrib-docxtemplater",
+  "version": "1.0.0",
+  "description": "docx templater",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omerkaptan/node-red-contrib-docxtemplater.git"
+  },
+  "keywords": [
+    "docx",
+    "templater"
+  ],
+  "author": "Ömer Kaptan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omerkaptan/node-red-contrib-docxtemplater/issues"
+  },
+  "homepage": "https://github.com/omerkaptan/node-red-contrib-docxtemplater#readme",
+  "node-red": {
+    "nodes": {
+      "docxtemplater": "docxtemplater.js"
+    }
+  },
+  "dependencies": {
+    "docxtemplater": "^3.34.3",
+    "pizzip": "^3.1.4"
+  }
+}
