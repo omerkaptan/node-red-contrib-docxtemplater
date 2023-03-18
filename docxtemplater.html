@@ -1,0 +1,26 @@
+<script type="text/javascript">
+    RED.nodes.registerType('docxtemplater',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "icon.svg",
+        label: function() {
+            return this.name||"docxtemplater";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="docxtemplater">
+    <div class="form-row">
+        <label for="node-input-templateDocx"><i class="fa fa-tag"></i> templateDocx</label>
+        <input type="text" id="node-input-templateDocx" placeholder="templateDocx">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="docxtemplater">
+    <p>A simple node that converts the message payloads into all docxtemplater characters</p>
+</script>
