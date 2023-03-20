@@ -29,5 +29,10 @@
 </script>
 
 <script type="text/html" data-help-name="docxtemplater">
-    <p>A simple node that converts the message payloads into all docxtemplater characters</p>
+    <p>Docxtemplater node u kullanılarak word üzerinde oluşturulan şablon msg.payload içerisindeki meta veri ile doldurularak yeni bir word belgesi oluşturur.</p>
+    <p>Meta verileri msg.payload objesinden almaktadır.</p>
+    <p>Kullanılacak olan word şablonunun yolu node içerisindeki Template(Docx) alanı doldurularak veya msg.templateDocx kullanılarak path verilebilir.</p>
+    <p>Meta veri ile üretilen word dosyası hiç bir path verilmez ise node çıkışında buffer olarak çıktı verecektir.</p>
+    <p>Çıktıyı buffer değil dosya olarak çıkartılması isteniyorsa Node üzerindeki Outfile alanı veya msg.outFile doldurulmalıdır.</p>
+
 </script>
