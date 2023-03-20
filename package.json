@@ -37,7 +37,7 @@
     "make",
     "Office Open XML",
     "creator",
-    "node red"
+    "node-red"
   ],
   "license": "MIT",
   "bugs": {
