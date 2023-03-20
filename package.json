@@ -1,26 +1,49 @@
 {
-  "name": "red-contrib-docxtemplater",
+  "name": "node-red-contrib-docxtemplater",
   "version": "1.0.0",
-  "description": "docx templater",
+  "author": "Ömer Kaptan",
+  "description": "Generate docx, pptx, and xlsx from templates (Word, Powerpoint and Excel documents), from Node-Red",
+  "contributors": [
+    {
+      "name": "Ömer Kaptan"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/omerkaptan/node-red-contrib-docxtemplater.git"
   },
-  "keywords": [
-    "docx",
-    "templater"
-  ],
-  "author": "Ömer Kaptan",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/omerkaptan/node-red-contrib-docxtemplater/issues"
-  },
-  "homepage": "https://github.com/omerkaptan/node-red-contrib-docxtemplater#readme",
   "node-red": {
     "nodes": {
       "docxtemplater": "docxtemplater.js"
     }
   },
+  "keywords": [
+    "docx",
+    "pptx",
+    "templates",
+    "template",
+    "templater",
+    "templating",
+    "report",
+    "xlsx",
+    "generation",
+    "generate",
+    "generator",
+    "microsoft office",
+    "microsoft word",
+    "microsoft powerpoint",
+    "microsoft excel",
+    "create",
+    "make",
+    "Office Open XML",
+    "creator",
+    "node red"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/omerkaptan/node-red-contrib-docxtemplater/issues"
+  },
+  "homepage": "https://github.com/omerkaptan/node-red-contrib-docxtemplater#readme",
   "dependencies": {
     "docxtemplater": "^3.34.3",
     "pizzip": "^3.1.4"
