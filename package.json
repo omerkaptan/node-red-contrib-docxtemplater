@@ -14,7 +14,7 @@
   },
   "node-red": {
     "nodes": {
-      "docxtemplater": "docxtemplater.js"
+      "docxtemplater": "docxtemplater/docxtemplater.js"
     }
   },
   "keywords": [
