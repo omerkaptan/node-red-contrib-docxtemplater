@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-docxtemplater",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "Ömer Kaptan",
   "description": "Generate docx, pptx, and xlsx from templates (Word, Powerpoint and Excel documents), from Node-Red",
   "contributors": [

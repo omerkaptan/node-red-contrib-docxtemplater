@@ -1,15 +1,17 @@
 <script type="text/javascript">
-    RED.nodes.registerType('docxtemplater',{
+    RED.nodes.registerType('docxtemplater', {
         category: 'function',
         color: '#a6bbcf',
         defaults: {
-            name: {value:""}
+            name: { value: "" },
+            template: { value: "" },
+            outfile: { value: "" }
         },
-        inputs:1,
-        outputs:1,
+        inputs: 1,
+        outputs: 1,
         icon: "font-awesome/fa-file-word-o",
-        label: function() {
-            return this.name||"docxtemplater";
+        label: function () {
+            return this.name || "docxtemplater";
         }
     });
 </script>
