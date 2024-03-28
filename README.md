@@ -5,7 +5,7 @@ based by docxtemplater libary generate docx/pptx documents from a docx/pptx temp
 ## how to usage
 
 create your template according to the instructions in the link and put the generated template in your local directory.
-
+https://docxtemplater.com/docs/tag-types/
 give file path to "msg.templateDocx" or fill in Template(Docx) setting in node
 
 For file output, the Outfile field in the node or msg.outFile must be filled.
