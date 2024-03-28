@@ -10,7 +10,9 @@ const convertTemplate = async ({ templateDocx, parameters, outFile }) => {
     "binary"
   );
   const zip = new PizZip(content);
+  const expressionParser = require('docxtemplater/expressions.js');
   const doc = new Docxtemplater(zip, {
+    parser: expressionParser,
     paragraphLoop: true,
     linebreaks: true,
   });
