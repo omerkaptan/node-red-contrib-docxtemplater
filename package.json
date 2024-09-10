@@ -46,6 +46,7 @@
   "homepage": "https://github.com/omerkaptan/node-red-contrib-docxtemplater#readme",
   "dependencies": {
     "docxtemplater": "^3.34.3",
-    "pizzip": "^3.1.4"
+    "pizzip": "^3.1.4",
+    "angular-expressions": "^1.2.1"
   }
 }
