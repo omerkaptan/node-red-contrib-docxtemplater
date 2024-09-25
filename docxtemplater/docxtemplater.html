@@ -4,8 +4,8 @@
         color: '#a6bbcf',
         defaults: {
             name: { value: "" },
-            template: { value: "" },
-            outfile: { value: "" }
+            templateDocx: { value: "" },
+            outFile: { value: "" }
         },
         inputs: 1,
         outputs: 1,
@@ -24,17 +24,20 @@
 
       <div class="form-row">
         <label for="node-input-output"><i class="fa fa-print"></i> Template(Docx)</label>
-        <input type="text" id="node-input-template" placeholder="Template" />
+        <input type="text" id="node-input-templateDocx" placeholder="TemplateDocx" />
         <label for="node-input-output"><i class="fa fa-file"></i> Outfile</label>
-        <input type="text" id="node-input-outfile" placeholder="Outfile" />
+        <input type="text" id="node-input-outFile" placeholder="Outfile" />
       </div>
 </script>
 
-<script type="text/html" data-help-name="docxtemplater">
-    <p>Docxtemplater node u kullanılarak word üzerinde oluşturulan şablon msg.payload içerisindeki meta veri ile doldurularak yeni bir word belgesi oluşturur.</p>
-    <p>Meta verileri msg.payload objesinden almaktadır.</p>
-    <p>Kullanılacak olan word şablonunun yolu node içerisindeki Template(Docx) alanı doldurularak veya msg.templateDocx kullanılarak path verilebilir.</p>
-    <p>Meta veri ile üretilen word dosyası hiç bir path verilmez ise node çıkışında buffer olarak çıktı verecektir.</p>
-    <p>Çıktıyı buffer değil dosya olarak çıkartılması isteniyorsa Node üzerindeki Outfile alanı veya msg.outFile doldurulmalıdır.</p>
+<script type="text/markdow" data-help-name="docxtemplater">
+Docxtemplater node generates a new Word document by filling the template created in Word with metadata from `msg.payload`.
 
+The metadata is taken from the `msg.payload` object.
+
+The path to the Word template can be provided by filling the Template(Docx) field within the node or by using `msg.templateDocx`.
+
+If no path is provided for the Word file generated with metadata, the node will output it as a buffer.
+
+If the output is desired as a file rather than a buffer, the `Outfile` field on the node or `msg.outFile` should be filled.
 </script>
