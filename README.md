@@ -1,21 +1,60 @@
-# docxtemplater for node-red
+# node-red-contrib-docxtemplater
 
-based by docxtemplater libary generate docx/pptx documents from a docx/pptx template. It can replace {placeholders} with data and also supports loops and conditions.
+`node-red-contrib-docxtemplater` is a [Node-RED](https://nodered.org/) node that enables you to generate Word documents (.docx) by dynamically filling templates using [Docxtemplater](https://docxtemplater.com/). With this node, you can create rich, personalized Word documents directly from Node-RED, making it ideal for report generation, invoices, and custom documents.
 
-## how to usage
+## Installation
 
-create your template according to the instructions in the link and put the generated template in your local directory.
+To install, run the following command in your Node-RED directory:
 
-https://docxtemplater.com/docs/tag-types/
-
-give file path to "msg.templateDocx" or fill in Template(Docx) setting in node
-
-For file output, the Outfile field in the node or msg.outFile must be filled.
-
-If you leave this field blank, the buffer object is output by default.
-
-## example flow.json
-
-```JSON
-[{"id":"d3e62523051182d9","type":"docxtemplater","z":"5c2c0a4858445b3b","name":"","x":480,"y":500,"wires":[["9b2a180f7897e90c"]]},{"id":"90a10276a9879f0b","type":"function","z":"5c2c0a4858445b3b","name":"prepare","func":"msg.templateDocx = \"/Users/omerkaptan/Downloads/example.docx\"\nmsg.payload = {\n    first_name: \"John\",\n    last_name: \"Doe\",\n    phone: \"0652455478\",\n    description: \"New Website\",\n}\nmsg.outFile = \"/Users/omerkaptan/Downloads/convert.docx\"\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","libs":[],"x":320,"y":500,"wires":[["d3e62523051182d9"]]},{"id":"9b2a180f7897e90c","type":"debug","z":"5c2c0a4858445b3b","name":"debug 2","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":640,"y":500,"wires":[]},{"id":"73f0b69b3c9173aa","type":"inject","z":"5c2c0a4858445b3b","name":"","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":190,"y":500,"wires":[["90a10276a9879f0b"]]}]
+```bash
+npm install omerkaptan/node-red-contrib-docxtemplater
 ```
+
+## Usage
+
+1. **Template Creation**: Start by creating a `.docx` template with placeholders formatted as tags, like `{{name}}`, `{{date}}`, or `{{items}}`. Tags are placeholders that Docxtemplater will replace with actual values.
+2. **Template Input**: Provide the `.docx` template to the node, either as a file path or binary input.
+3. **Data Input**: Send data as a JSON object, mapping each tag to a value (e.g., `{ "name": "Alice", "date": "2024-10-30" }`).
+4. **Output**: The node outputs a `.docx` document where each placeholder is replaced by the data you've provided.
+
+### Examples
+
+Here are some specific tag usage examples you can use with your `.docx` templates:
+
+- **Simple Text Replacement**: Replace `{{name}}` with a name:
+  ```json
+  { "name": "Alice" }
+  ```
+
+- **Looping Over Arrays**: To add a list of items in a table format, use the `{{#items}}...{{/items}}` tag structure in your `.docx` template, and pass an array of objects as shown below:
+  ```json
+  {
+    "items": [
+      { "description": "Item 1", "price": 10 },
+      { "description": "Item 2", "price": 15 }
+    ]
+  }
+  ```
+
+- **Conditional Tags**: Use conditional tags to show or hide content based on a value:
+  ```json
+  { "isApproved": true }
+  ```
+  In your template, use tags like `{{#isApproved}}Approved{{/isApproved}}` to display "Approved" only if `isApproved` is true.
+
+For more advanced tag types and formatting options, see the full [Docxtemplater Tag Types documentation](https://docxtemplater.com/docs/tag-types/).
+
+### Example Flow
+
+1. **Template Node**: Use a file input node to load the `.docx` template.
+2. **Data Node**: Add a JSON node with the structured data to fill in placeholders.
+3. **Docxtemplater Node**: Connect the template and data nodes to the `docxtemplater` node.
+4. **Output Node**: Use a file output node to save the generated `.docx` document.
+
+## Dependencies
+
+This node depends on [Docxtemplater](https://docxtemplater.com/) for template processing, so refer to their documentation for further customization options.
+
+## License
+
+MIT License
